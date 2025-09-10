@@ -28,6 +28,11 @@ This will load the .csv file into a Pandas DataFrame
    cars.head()
 ```
 [cars head output](FirstFive.png)
+
+```python
+   cars.tail()
+```
+[cars tail output](LastFive.png)
       
 - **Output:**
   ```python
