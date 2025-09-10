@@ -41,6 +41,7 @@ This will load the .csv file into a Pandas DataFrame
 - **Goal:** Using the DataFrame cars from Problem 1, extract specific information using subsetting, slicing, and indexing operations.
 - **Code:** Begin by loading the CSV file into a DataFrame named cars using the pd.read_csv() function. Use the .loc[] method to filter rows and select specific columns based on conditions. For Problem a, select the first five rows with odd-numbered columns by explicitly listing the column names. For Problem b, apply a condition to select the row with the model 'Mazda RX4'. For Problem c, filter the DataFrame to select only the cyl column for the model 'Camaro Z28'. For Problem d, run separate .loc[] commands for each model (Mazda RX4 Wag, Ford Pantera L, and Honda Civic) to display their corresponding cyl and gear values. An alternative approach is to use the .isin() function to combine all three conditions in one run, but the original solution uses multiple lines of code.
 
+a.
   ```python
    import pandas as pd
     cars = pd.read_csv('cars.csv')
@@ -48,46 +49,26 @@ This will load the .csv file into a Pandas DataFrame
   FirstFive_odd
   ```
   - **Output:**
- [Problem 2A Output](
-- 
-    words = sentence.split()                  # split into list of words
-    new_words = []                            # empty list para istore bagong version ng words
+ [Problem 2A Output](Problem 2A.png)
 
-    for w in words:                           # go through each word one by one
-        lw = w.lower()                        # make the word lowercase
-        if lw in d:                           # check in dictionary
-            new_words.append(d[lw])           # replace with emoticon
-        else:
-            new_words.append(w)               # retain orig. word pag wala sa dictionary
-
-    return " ".join(new_words)                # compile lahat ng nasa new_words with spaces in between\
-
-- **Output:**
+b.
   ```python
-  print(emotify("Make me smile"))   # Make me :)
-  print(emotify("I am mad"))        # I am >:(
+   cars.loc[cars['Model']=='Mazda RX4']
+  ```
+  - **Output:**
+ [Problem 2B Output](Problem 2B.png)
 
-> Make me :)\
-> I am >:(
-
-### 3. Unpacking List Problem
-- **Goal:** Unpack the list writeyourcodehere into three variables, being first, middle, and last, with middle being everything in between the first and last element. Then print all three variables.
-- **Code:**  Create a list called lst that contains several numbers. To unpack it, assign the first element lst[0] to the variable first, all elements in between lst[1:-1] to the variable middle, and the last element lst[-1] to the variable last. The expression lst[0] directly accesses the first element in the list. The slice lst[1:-1] takes everything except the first and last elements, which makes up the middle part of the list. The expression lst[-1] accesses the last element using negative indexing.
+c.
+  ```python
+   cars.loc[(cars['Model']=='Camaro Z28'), ['cyl']]
+  ```
+  - **Output:**
+ [Problem 2C Output](Problem 2C.png)
   
+d.
   ```python
-    lst = [1, 2, 3, 4, 5, 6]
-    
-    first = lst[0]                                # take first item in the list (index 0 = 1)
-    middle = lst[1:-1]                            # take all items except yung first at yung last ([2,3,4,5])
-    last = lst[-1]                                # take last item in the list (index -1 = 6)
+   cars.loc[cars['Model'].isin(['Mazda RX4 Wag', 'Ford Pantera L', 'Honda Civic']), ['cyl', 'gear']]
+  ```
+  - **Output:**
+ [Problem 2D Output](Problem 2D.png)
 
-
-- **Output:**
-  ```python
-    print("first:", first)                       
-    print("middle:", middle)
-    print("last:", last)
-
-> first: 1\
-> middle: [2, 3, 4, 5]\
-> last: 6
