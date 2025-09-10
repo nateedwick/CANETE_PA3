@@ -5,7 +5,7 @@ This project contains solutions to data analysis problems using the Pandas libra
 It demonstrates how to identify, apply, and combine different Pandas functions to analyze datasets.
 The problems cover essential concepts such as loading CSV files, displaying data frames, subsetting, slicing, and indexing.
 
-## Why this is Useful
+## Project Significance
 Using Pandas is useful as it simplifies working with datasets by providing built-in functions for loading, filtering, and analyzing data. Instead of handling raw text files manually, Pandas organizes data into tables that are easier to read and manipulate. This makes it practical for solving real problems in programming, engineering, and data analysis.
 
 ## Getting Started
