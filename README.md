@@ -11,6 +11,8 @@ The code can be run in any Python environment or IDE. For this project, Jupyter 
 The dataset used in this assignment (cars.csv) was provided through the experiment instructions.
 For convenience, the same CSV file is also uploaded in this GitHub repository alongside the Jupyter Notebook, so that users can run the code directly
 
+Note: When opening cars.csv directly in GitHub, the file may look different compared to how it appears in Pandas or Excel. The index values may also appear different since GitHub does not render them as table indices but simply shows plain text rows. Do not use the GitHub preview as your guide. Always load the CSV into Pandas or Excel to view the dataset correctly.
+
 ## Problems and Solutions
 
 ### 1. Data Loading and Display Problem
