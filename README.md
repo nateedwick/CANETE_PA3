@@ -27,34 +27,29 @@ This will load the .csv file into a Pandas DataFrame
   ```python
    cars.head()
 ```
-[cars head output](FirstFive.png)
+- **Output:**
+[Cars Head Output](FirstFive.png)
 
 ```python
    cars.tail()
 ```
-[cars tail output](LastFive.png)
-      
 - **Output:**
-  ```python
-      print(alphabet_soup("hello"))   # ehllo
-      print(alphabet_soup("hacker"))  # acehkr
+[Cars Tail Output](LastFive.png)
+      
 
-> ehllo\
-> acehkr
-
- ### 2. Emoticon Problem 
-- **Goal:** Create a function that changes specific words into emoticons. Given a sentence as a string, replace the words smile, grin, sad and mad with their corresponding emoticons.
-- **Code:** Create a function called emotify( ) with one parameter called sentence. Inside the function, store a dictionary d that contains the words smile, grin, sad, and mad as keys, and their corresponding emoticons :), :D, :((, and >:( as values. Use the split( ) function to separate the sentence into individual words and save them in a list called words. Prepare an empty list new_words to store the modified words. Create a for loop to go through each word in words. In every iteration, convert the word into lowercase using the lower( ) function and check if it exists as a key in the dictionary d. If it matches, append its corresponding emoticon to new_words. If not, append the original word. After the loop finishes, use " ".join(new_words) to combine all elements of new_words into a single string, separating them with spaces. This returns the new sentence where the specific words have been replaced with their emoticons, while all other words retain their original case.
+ ### 2. Data Subsetting and Indexing Problem 
+- **Goal:** Using the DataFrame cars from Problem 1, extract specific information using subsetting, slicing, and indexing operations.
+- **Code:** Begin by loading the CSV file into a DataFrame named cars using the pd.read_csv() function. Use the .loc[] method to filter rows and select specific columns based on conditions. For Problem a, select the first five rows with odd-numbered columns by explicitly listing the column names. For Problem b, apply a condition to select the row with the model 'Mazda RX4'. For Problem c, filter the DataFrame to select only the cyl column for the model 'Camaro Z28'. For Problem d, run separate .loc[] commands for each model (Mazda RX4 Wag, Ford Pantera L, and Honda Civic) to display their corresponding cyl and gear values. An alternative approach is to use the .isin() function to combine all three conditions in one run, but the original solution uses multiple lines of code.
 
   ```python
-  def emotify(sentence):
-    d = {
-        "smile": ":)", 
-        "grin": ":D",
-        "sad": ":((",
-        "mad": ">:("
-    }
-
+   import pandas as pd
+    cars = pd.read_csv('cars.csv')
+  FirstFive_odd = cars.loc[[0,1,2,3,4],['Model', 'cyl', 'hp', 'wt', 'vs', 'gear']]
+  FirstFive_odd
+  ```
+  - **Output:**
+ [Problem 2A Output](
+- 
     words = sentence.split()                  # split into list of words
     new_words = []                            # empty list para istore bagong version ng words
 
