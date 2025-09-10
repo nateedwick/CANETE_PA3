@@ -24,12 +24,14 @@ For convenience, the same CSV file is also uploaded in this GitHub repository al
 
 This will load the .csv file into a Pandas DataFrame
 
+a.
   ```python
    cars.head()
 ```
 - **Output:**
 [Cars Head Output](FirstFive.png)
 
+b.
 ```python
    cars.tail()
 ```
@@ -39,7 +41,7 @@ This will load the .csv file into a Pandas DataFrame
 
  ### 2. Data Subsetting and Indexing Problem 
 - **Goal:** Using the DataFrame cars from Problem 1, extract specific information using subsetting, slicing, and indexing operations.
-- **Code:** Begin by loading the CSV file into a DataFrame named cars using the pd.read_csv() function. Use the .loc[] method to filter rows and select specific columns based on conditions. For Problem a, select the first five rows with odd-numbered columns by explicitly listing the column names. For Problem b, apply a condition to select the row with the model 'Mazda RX4'. For Problem c, filter the DataFrame to select only the cyl column for the model 'Camaro Z28'. For Problem d, run separate .loc[] commands for each model (Mazda RX4 Wag, Ford Pantera L, and Honda Civic) to display their corresponding cyl and gear values. An alternative approach is to use the .isin() function to combine all three conditions in one run, but the original solution uses multiple lines of code.
+- **Code:** Begin by loading the CSV file into a DataFrame named cars using the pd.read_csv() function. Use the **.loc[]** method to filter rows and select specific columns based on conditions. For Problem a, select the first five rows with odd-numbered columns by explicitly listing the column names. For Problem b, apply a condition to select the row with the model 'Mazda RX4'. For Problem c, filter the DataFrame to select only the cyl column for the model 'Camaro Z28'. For Problem d, run separate .loc[] commands for each model (Mazda RX4 Wag, Ford Pantera L, and Honda Civic) to display their corresponding cyl and gear values. An alternative approach is to use the .isin() function to combine all three conditions in one run, but the original solution uses multiple lines of code.
 
 a.
   ```python
@@ -49,26 +51,26 @@ a.
   FirstFive_odd
   ```
   - **Output:**
-[Cars Head Output](Problem2A.png)
+[Problem 2A Output](Problem2A.png)
 
 b.
   ```python
    cars.loc[cars['Model']=='Mazda RX4']
   ```
   - **Output:**
- [Problem 2B Output](Problem 2B.png)
+ [Problem 2B Output](Problem2B.png)
 
 c.
   ```python
    cars.loc[(cars['Model']=='Camaro Z28'), ['cyl']]
   ```
   - **Output:**
- [Problem 2C Output](Problem 2C.png)
+ [Problem 2C Output](Problem2C.png)
   
 d.
   ```python
    cars.loc[cars['Model'].isin(['Mazda RX4 Wag', 'Ford Pantera L', 'Honda Civic']), ['cyl', 'gear']]
   ```
   - **Output:**
- [Problem 2D Output](Problem 2D.png)
+ [Problem 2D Output](Problem2D.png)
 
