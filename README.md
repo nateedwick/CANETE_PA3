@@ -16,7 +16,7 @@ Note: When opening cars.csv directly in GitHub, the file may look different comp
 ## Problems and Solutions
 
 ### 1. Data Loading and Display Problem
-- **Goal:** Load the provided .csv file into a Pandas DataFrame and display the first five and last five rows.
+- **Goal:** Using knowledge obtained from the experiment and demonstrations, load the provided .csv file into a Pandas DataFrame and display the first five and last five rows.
 
 - **Code:**  Import the Pandas library and use the pd.read_csv() function to load the CSV file into a DataFrame named cars. To display the first five rows, call the .head() method, and to display the last five rows, call the .tail() method.
   ```python
@@ -42,7 +42,12 @@ b.
       
 
  ### 2. Data Subsetting and Indexing Problem 
-- **Goal:** Using the DataFrame cars from Problem 1, extract specific information using subsetting, slicing, and indexing operations.
+- **Goal:** Using the dataframe cars in problem 1, extract the following information using subsetting, slicing and indexing operations.
+  - a. Display the first five rows with odd-numbered columns (columns 1, 3, 5, 7...) of cars.
+  - b. Display the row that contains the ‘Model’ of ‘Mazda RX4’.
+  - c. How many cylinders (‘cyl’) does the car model ‘Camaro Z28’ have?
+  - d. Determine how many cylinders (‘cyl’) and what gear type (‘gear’) do the car models ‘Mazda RX4 Wag’, ‘Ford Pantera L’ and ‘Honda Civic’ have.
+
 - **Code:** Begin by loading the CSV file into a DataFrame named cars using the pd.read_csv() function. Use the **.loc[]** method to filter rows and select specific columns based on conditions. For Problem a, select the first five rows with odd-numbered columns by explicitly listing the column names. For Problem b, apply a condition to select the row with the model 'Mazda RX4'. For Problem c, filter the DataFrame to select only the cyl column for the model 'Camaro Z28'. For Problem d, run separate .loc[] commands for each model (Mazda RX4 Wag, Ford Pantera L, and Honda Civic) to display their corresponding cyl and gear values. An alternative approach is to use the .isin() function to combine all three conditions in one run. However, note that when .isin() is used, the results are automatically sorted according to the DataFrame’s index values, so although the instructions list Honda Civic last, it appears in the middle of the output because its index (18) comes after Mazda RX4 Wag (1) and before Ford Pantera L (28).
 
 a.
